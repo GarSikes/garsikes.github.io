@@ -1,1 +1,0 @@
-# garsikes.github.io
