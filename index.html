@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Garrett Sikes | CS Capstone ePortfolio</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --panel: #161b22;
+    --border: #30363d;
+    --text: #c9d1d9;
+    --heading: #f0f6fc;
+    --accent: #58a6ff;
+    --muted: #8b949e;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+  }
+  header {
+    padding: 64px 24px 48px;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+  }
+  header h1 {
+    color: var(--heading);
+    font-size: 2.2rem;
+    margin: 0 0 8px;
+  }
+  header p.tagline {
+    color: var(--muted);
+    font-size: 1.05rem;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+  nav {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    padding: 16px 24px;
+    background: var(--panel);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  nav a {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 0.95rem;
+  }
+  nav a:hover { color: var(--accent); }
+  main {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 48px 24px 96px;
+  }
+  section {
+    margin-bottom: 64px;
+  }
+  section h2 {
+    color: var(--heading);
+    font-size: 1.5rem;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+  }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 24px;
+    margin-bottom: 20px;
+  }
+  .card h3 {
+    color: var(--heading);
+    margin-top: 0;
+    font-size: 1.15rem;
+  }
+  .card p { color: var(--text); }
+  .card .links a {
+    color: var(--accent);
+    text-decoration: none;
+    margin-right: 16px;
+    font-size: 0.95rem;
+  }
+  .card .links a:hover { text-decoration: underline; }
+  .video-wrap {
+    background: var(--panel);
+    border: 1px dashed var(--border);
+    border-radius: 8px;
+    padding: 48px 24px;
+    text-align: center;
+    color: var(--muted);
+  }
+  .video-wrap iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: none;
+    border-radius: 6px;
+  }
+  footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.85rem;
+    padding: 24px;
+    border-top: 1px solid var(--border);
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Garrett Sikes</h1>
+  <p class="tagline">Computer Science, Cybersecurity Concentration &mdash; Southern New Hampshire University</p>
+</header>
+
+<nav>
+  <a href="#video">Code Review</a>
+  <a href="#software-design">Software Design &amp; Engineering</a>
+  <a href="#algorithms">Algorithms &amp; Data Structures</a>
+  <a href="#databases">Databases</a>
+  <a href="#self-assessment">Self-Assessment</a>
+</nav>
+
+<main>
+
+  <section id="video">
+    <h2>Code Review</h2>
+    <div class="video-wrap">
+      <!--
+        Replace this placeholder with an embed once the video is hosted
+        somewhere that supports embedding (e.g. YouTube, set to Unlisted).
+        Example once ready:
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen></iframe>
+      -->
+      Code review video coming soon.
+    </div>
+  </section>
+
+  <section id="software-design">
+    <h2>Software Design and Engineering</h2>
+    <div class="card">
+      <h3>Travlr Getaways &mdash; Backend API</h3>
+      <p>
+        A MEAN-stack travel booking application built across CS 465 (Full
+        Stack Development I). The enhancement focused on hardening the
+        Node/Express API layer: fixing a JWT authentication bypass, locking
+        down CORS to a trusted origin, adding rate limiting and a minimum
+        password policy, and correcting an unhandled error path in account
+        registration.
+      </p>
+      <div class="links">
+        <a href="#">Enhanced Code (GitHub)</a>
+        <a href="#">Original Code (GitHub)</a>
+        <a href="#">Narrative (PDF)</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="algorithms">
+    <h2>Algorithms and Data Structures</h2>
+    <div class="card">
+      <h3>Course Advising Tool &mdash; ProjectTwo.cpp</h3>
+      <p>
+        A C++ console program from DSA: Analysis and Design (CS 300) that
+        loads course data from a CSV file for advising and lookup. The
+        enhancement converted an unbalanced binary search tree into a
+        self-balancing AVL tree, fixed CSV parsing gaps, and was backed by
+        measured before-and-after timing data showing the difference on
+        sorted versus random input.
+      </p>
+      <div class="links">
+        <a href="#">Enhanced Code (GitHub)</a>
+        <a href="#">Original Code (GitHub)</a>
+        <a href="#">Narrative (PDF)</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="databases">
+    <h2>Databases</h2>
+    <div class="card">
+      <h3>Travlr Getaways &mdash; Trip Schema</h3>
+      <p>
+        Coming soon: schema validation, indexing, and input sanitization
+        work on the Travlr Getaways MongoDB data layer.
+      </p>
+      <div class="links">
+        <a href="#">Enhanced Code (GitHub)</a>
+        <a href="#">Original Code (GitHub)</a>
+        <a href="#">Narrative (PDF)</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="self-assessment">
+    <h2>Professional Self-Assessment</h2>
+    <div class="card">
+      <p>Coming soon.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  &copy; 2026 Garrett Sikes &mdash; CS 499 Computer Science Capstone, SNHU
+</footer>
+
+</body>
+</html>
