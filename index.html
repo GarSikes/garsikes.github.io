@@ -183,8 +183,13 @@
     <div class="card">
       <h3>Travlr Getaways: Trip Schema</h3>
       <p>
-        Coming soon: schema validation, indexing, and input sanitization
-        work on the Travlr Getaways MongoDB data layer.
+         The database layer for the same Travlr Getaways application, built
+        on MongoDB with Mongoose. The enhancement added real schema
+        validation so invalid trip data (like a non-numeric price) gets
+        rejected instead of silently saved, closed a gap where the trip
+        deletion endpoint had no authentication check at all, and fixed a
+        JWT verification bug that wasn't actually blocking invalid tokens
+        the way it appeared to on the surface.
       </p>
       <div class="links">
         <a href="https://github.com/GarSikes/CapstoneTravlrDatabase/tree/main/Travlr%20Final">Enhanced Code (GitHub)</a>
