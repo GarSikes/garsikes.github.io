@@ -84,6 +84,7 @@
     font-size: 1.15rem;
   }
   .card p { color: var(--text); }
+  .card p + p { margin-top: 16px; }
   .card .links a {
     color: var(--accent);
     text-decoration: none;
@@ -115,29 +116,137 @@
 </style>
 </head>
 <body>
- 
+
 <header>
   <h1>Garrett Sikes</h1>
   <p class="tagline">Computer Science, Cybersecurity Concentration at Southern New Hampshire University</p>
 </header>
- 
+
 <nav>
+  <a href="#self-assessment">Self-Assessment</a>
   <a href="#video">Code Review</a>
   <a href="#software-design">Software Design &amp; Engineering</a>
   <a href="#algorithms">Algorithms &amp; Data Structures</a>
   <a href="#databases">Databases</a>
-  <a href="#self-assessment">Self-Assessment</a>
 </nav>
- 
+
 <main>
- 
+
+  <section id="self-assessment">
+    <h2>Professional Self-Assessment</h2>
+    <div class="card">
+      <p>
+        I'm a computer science student finishing my degree with a concentration in
+        cybersecurity, and the thread running through every project in this portfolio
+        is the same one: I don't just make code work, I go back and ask what could
+        break it. Across three different projects built at three different points in
+        my coursework, I found and fixed real security and reliability issues that had
+        been sitting there unnoticed, not because I went looking for flaws on purpose,
+        but because a security mindset means assuming they are there until proven
+        otherwise.
+      </p>
+      <p>
+        Collaborative environments showed up for me less as teamwork on a shared
+        codebase and more as being genuinely responsive to feedback from a reviewer,
+        which is its own kind of collaboration. When my instructor noted after
+        Milestone One that I was missing a self-introduction and a GitHub setup
+        screenshot, I made sure both were included going forward. When she gave
+        feedback on a journal entry to write in flowing prose instead of a numbered
+        list, I did not just apply that to the next journal entry, I rewrote the
+        Milestone Three narrative from a numbered-question format into one continuous
+        essay to match, and carried that same approach into every narrative after it.
+        When she specifically asked for comments in my code going forward, I went back
+        through the Milestone Three enhancement and added documentation to every
+        method, not just the parts directly tied to the enhancement itself. None of
+        that happens in isolation; it only works if you actually take feedback from
+        someone else and let it change what you produce next, which is the part of
+        collaboration that matters most once you are the one doing the work.
+      </p>
+      <p>
+        Communication has largely been the throughline connecting every other outcome
+        in this portfolio. Every enhancement included a narrative explaining why I made
+        the choices I did and what someone reading it should understand, written for an
+        audience that might not already know the codebase. The journals pushed this
+        further, since they asked me to connect course concepts to my own interests and
+        reasoning rather than just report what I did. What actually improved over the
+        term was not the writing ability itself so much as recognizing when a numbered
+        list of facts is the wrong format and a reasoned explanation is the right one,
+        which goes back to that same feedback about flowing prose over bullet points.
+      </p>
+      <p>
+        The clearest example of algorithmic design and trade-offs is the DSA
+        enhancement, where I converted an unbalanced binary search tree into a
+        self-balancing AVL tree for a course-advising lookup tool. That decision was
+        not arbitrary; I weighed it against leaving the tree unbalanced and against a
+        red-black tree alternative, and the trade-off came down to guaranteeing O(log n)
+        performance on sorted or near-sorted input, exactly the kind of input a real
+        course catalog would produce, at the cost of more complex rotation logic on
+        every insert. I backed that decision with actual before-and-after timing data
+        on both sorted and random input, rather than assuming the balancing would help
+        without checking.
+      </p>
+      <p>
+        The use of well-founded and innovative techniques shows up most clearly in the
+        database enhancement, where I did not just patch the bug I found, I rebuilt the
+        validation and authentication logic around how the application is actually
+        used. Changing perPerson from a string to a validated number and adding trim
+        validation meant the database itself now rejects bad data instead of relying on
+        the application layer to catch it. I also did not take the authentication fix
+        on faith; before concluding it was actually correct, I tested it against valid,
+        invalid, missing, and malformed tokens to confirm the middleware behaved the
+        way I intended rather than assuming it did because the code looked right.
+      </p>
+      <p>
+        Security is the outcome I would point to first, since it ran through all three
+        artifacts rather than sitting isolated in one. In the Travlr backend, I fixed a
+        JWT authentication bypass, locked down CORS, added rate limiting, and corrected
+        an unhandled error path in registration. In the database layer, I closed a gap
+        where the trip-deletion endpoint had no authentication at all and fixed a bug
+        where the authentication check appeared to work but was not actually blocking
+        invalid tokens the way it looked like it was. Even the DSA enhancement, not a
+        security artifact on its surface, included hardening the CSV parsing so
+        malformed input could not silently produce bad data. In each case the pattern
+        was the same: assume the existing code is not as safe as it looks, and go
+        verify that instead of trusting it.
+      </p>
+      <p>
+        The portfolio itself is organized around three enhanced artifacts. The first is
+        the backend API for Travlr Getaways, a MEAN-stack travel booking site originally
+        built in Full Stack Development I, where the enhancement focused on closing an
+        authentication bypass, locking down CORS to a trusted origin, and hardening
+        account registration and rate limiting. The second is a C++ course-advising tool
+        from Analysis and Design, enhanced by converting its underlying binary search
+        tree into a self-balancing AVL tree and fixing gaps in how it parsed input data.
+        The third returns to Travlr Getaways, this time at the database layer, adding
+        real schema validation and closing an authentication gap on the trip-deletion
+        endpoint, along with fixing a JWT verification bug that was not actually doing
+        what it looked like it was doing. Together, the three show the same approach
+        applied across genuinely different parts of computer science, an API layer, a
+        data structure, and a database schema, each revisited with the same question of
+        what the first pass through did not catch.
+      </p>
+      <p>
+        Taken together, this portfolio is not a showcase of work that was right the
+        first time. It is a record of going back to things I had already turned in,
+        finding what was actually wrong with them, and fixing it for real reasons
+        rather than to pad a requirement. That is the habit I want to carry into a
+        security-focused role: not waiting for someone else to find the flaw, going and
+        looking for it first. I am finishing this degree ready to do that kind of work
+        professionally, not as an academic exercise but as the actual job.
+      </p>
+      <div class="links">
+        <a href="#">Download as Word Document</a>
+      </div>
+    </div>
+  </section>
+
   <section id="video">
     <h2>Code Review</h2>
     <div class="video-wrap">
       <iframe src="https://www.youtube.com/embed/eRmadjxLvI8" title="Code Review" allowfullscreen></iframe>
     </div>
   </section>
- 
+
   <section id="software-design">
     <h2>Software Design and Engineering</h2>
     <div class="card">
@@ -157,7 +266,7 @@
       </div>
     </div>
   </section>
- 
+
   <section id="algorithms">
     <h2>Algorithms and Data Structures</h2>
     <div class="card">
@@ -177,7 +286,7 @@
       </div>
     </div>
   </section>
- 
+
   <section id="databases">
     <h2>Databases</h2>
     <div class="card">
@@ -198,20 +307,12 @@
       </div>
     </div>
   </section>
- 
-  <section id="self-assessment">
-    <h2>Professional Self-Assessment</h2>
-    <div class="card">
-      <p>Coming soon.</p>
-    </div>
-  </section>
- 
+
 </main>
- 
+
 <footer>
   &copy; 2026 Garrett Sikes, CS 499 Computer Science Capstone, SNHU
 </footer>
- 
+
 </body>
 </html>
- 
